@@ -32,53 +32,74 @@ body {
   background-position: top;
   /* top of image will remain the same*/
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-/* Logo styles */
-.header__logo-box {
-  /* can use top bottom properties*/
-  position: absolute;
-  /* Need a relative parent */
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-/* Header text styles */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  /* relation to the parent element */
-  left: 50%;
-  /* shifts relative to the its own element 
-   and ont parent element*/
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Using a clip-path */
+  /* Header text styles */ }
+  .header__logo-box {
+    /* can use top bottom properties*/
+    position: absolute;
+    /* Need a relative parent */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /* relation to the parent element */
+    left: 50%;
+    /* shifts relative to the its own element 
+         and ont parent element*/
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* backface-visibility: hidden;  */
   margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s; }
+  .heading-primary--sub {
+    display: block;
+    /* behaves like a block element */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 2s; }
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 2s; }
+/* styles for all of our buttons */
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  transition: all .3s;
+  position: relative;
+  font-size: 1.6rem; }
 
-.heading-primary--sub {
-  display: block;
-  /* behaves like a block element */
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 2s; }
+.btn:hover {
+  /* transform: translateY(-3px); */
+  background-color: #27B913;
+  border: 0.1rem solid #27B913;
+  color: #fff;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  /* transform: scale(1.03); */ }
 
+.btn--white {
+  border: 0.2rem solid #fff;
+  /* background-color: ; */
+  color: #fff;
+  animation: moveInBottom 1s ease-out 0s; }
+
+/* Animation styles */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -106,52 +127,3 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
-
-/* styles for all of our buttons */
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  display: inline-block;
-  transition: all .3s;
-  position: relative;
-  font-size: 1.6rem; }
-
-.btn:hover {
-  /* transform: translateY(-3px); */
-  background-color: #27b913;
-  border: 0.1rem solid #27b913;
-  color: #fff;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  /* transform: scale(1.03); */ }
-
-/* .btn:active {
-   transform: translateY(-1px);
-} */
-.btn--white {
-  border: 0.2rem solid white;
-  /* background-color: #fff; */
-  color: #fff;
-  animation: moveInBottom 1s ease-out 0s; }
-
-/* .btn::after {
-   content: ""; 
-   display: inline-block;
-   height: 100%;
-   width: 100%;
-   border-radius: 100px;
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   z-index: -1;
-}
-
-.btn-white::after {
-   background-color: rgb(39, 185, 19);
-}
-
-.btn:hover::after {
-   transform: scale(2);
-} */

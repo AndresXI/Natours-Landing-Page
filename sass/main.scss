@@ -1,10 +1,10 @@
-
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-white: #fff;
 $color-gray: #777;
-
+$color-black: #000;
+$button-green: #27B913; 
 
 /* Universal selector */
 *,
@@ -46,35 +46,32 @@ body {
    background-position: top;
    /* top of image will remain the same*/
    position: relative;
-   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
-      /* Using a clip-path */
+   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);/* Using a clip-path */
 
-}
+      &__logo-box {
+            /* can use top bottom properties*/
+            position: absolute;
+            /* Need a relative parent */
+            top: 4rem;
+            left: 4rem;
+      }
 
-/* Logo styles */
-.header__logo-box {
-   /* can use top bottom properties*/
-   position: absolute;
-   /* Need a relative parent */
-   top: 4rem;
-   left: 4rem;
-}
+      &__logo {
+         height: 3.5rem;
+      }
 
-.header__logo {
-   height: 3.5rem;
-}
+      /* Header text styles */
+      &__text-box {
+         position: absolute;
+         top: 40%;
+         /* relation to the parent element */
+         left: 50%;
+         /* shifts relative to the its own element 
+         and ont parent element*/
+         transform: translate(-50%, -50%);
+         text-align: center;
 
-/* Header text styles */
-.header__text-box {
-   position: absolute;
-   top: 40%;
-   /* relation to the parent element */
-   left: 50%;
-   /* shifts relative to the its own element 
-   and ont parent element*/
-   transform: translate(-50%, -50%);
-   text-align: center;
-
+      }
 }
 
 .heading-primary {
@@ -82,28 +79,62 @@ body {
    text-transform: uppercase;
    /* backface-visibility: hidden;  */
    margin-bottom: 6rem;
+
+   &--main {
+         display: block;
+         font-size: 6rem;
+         font-weight: 400;
+         letter-spacing: 3.5rem;
+         animation-name: moveInLeft;
+         animation-duration: 2s;
+
+   }
+
+   &--sub {
+         display: block;
+         /* behaves like a block element */
+         font-size: 2rem;
+         font-weight: 700;
+         letter-spacing: 1.75rem;
+         animation-name: moveInRight;
+         animation-duration: 2s;
+   }
 }
 
-.heading-primary--main {
-   display: block;
-   font-size: 6rem;
-   font-weight: 400;
-   letter-spacing: 3.5rem;
-   animation-name: moveInLeft;
-   animation-duration: 2s;
+ /* styles for all of our buttons */
+.btn {
+      &:link,
+      &:visited {
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1.5rem 4rem;
+            border-radius: 10rem;
+            display: inline-block;
+            transition: all .3s;
+            position: relative;
+            font-size: 1.6rem;
+      }
+
+      &:hover {
+            /* transform: translateY(-3px); */
+            background-color: $button-green;
+            border: .1rem solid $button-green;
+            color: $color-white;
+            box-shadow: 0 .5rem 2rem rgba($color-black, 0.2);
+            /* transform: scale(1.03); */
+      }
+
+      &--white {
+            border: .2rem solid $color-white;
+            /* background-color: ; */
+            color: $color-white;
+            animation: moveInBottom 1s ease-out 0s;
+
+      }
 
 }
 
-.heading-primary--sub {
-   display: block;
-   /* behaves like a block element */
-   font-size: 2rem;
-   font-weight: 700;
-   letter-spacing: 1.75rem;
-   animation-name: moveInRight;
-   animation-duration: 2s;
-}
-
+/* Animation styles */
 @keyframes moveInLeft {
    0% {
       opacity: 0;
@@ -148,56 +179,3 @@ body {
    }
 }
 
-/* styles for all of our buttons */
-.btn:link,
-.btn:visited {
-   text-decoration: none;
-   text-transform: uppercase;
-   padding: 1.5rem 4rem;
-   border-radius: 10rem;
-   display: inline-block;
-   transition: all .3s;
-   position: relative;
-   font-size: 1.6rem;
-}
-
-.btn:hover {
-   /* transform: translateY(-3px); */
-   background-color: rgb(39, 185, 19);
-   border: .1rem solid rgb(39, 185, 19);
-   color: $color-white;
-   box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
-   /* transform: scale(1.03); */
-}
-
-/* .btn:active {
-   transform: translateY(-1px);
-} */
-
-.btn--white {
-   border: .2rem solid rgb($color-white);
-   /* background-color: ; */
-   color: $color-white;
-   animation: moveInBottom 1s ease-out 0s;
-
-}
-
-/* .btn::after {
-   content: ""; 
-   display: inline-block;
-   height: 100%;
-   width: 100%;
-   border-radius: 100px;
-   position: absolute;
-   top: 0px;
-   left: 0px;
-   z-index: -1;
-}
-
-.btn-white::after {
-   background-color: rgb(39, 185, 19);
-}
-
-.btn:hover::after {
-   transform: scale(2);
-} */
