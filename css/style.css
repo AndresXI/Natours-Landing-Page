@@ -1,169 +1,140 @@
-/* Universal selector */ 
+/* Universal selector */
 *,
 *::after,
 *::before {
-   margin: 0; 
-   padding: 0; 
-   box-sizing: inherit; 
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 /* ROOT font size is set in the html  */
 html {
-   font-size: 62.5%; /* 10 / 16 */
-}
+  font-size: 62.5%;
+  /* 10 / 16 */ }
 
 /* default properties */
 body {
-   /* all child elements of this body parent will inherit */
-   font-family: "Lato", sans-serif; 
-   font-weight: 400; 
-   /* font-size: 16px;  */
-   line-height: 1.7; 
-   color: #777; 
-   padding: 1rem; /* does not gets inherited, applies only to the body el */
-   box-sizing: border-box;
-}
+  /* all child elements of this body parent will inherit */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px;  */
+  line-height: 1.7;
+  color: #777;
+  padding: 1rem;
+  /* does not gets inherited, applies only to the body el */
+  box-sizing: border-box; }
 
 .header {
-   height: 95vh; /* this should be 95 percent of the viewport height */
-   /* Using a linear gradient */
-   background-image: linear-gradient(
-      to right top,
-       rgba(126, 213, 111, 0.8600), 
-       rgba(40, 180, 133, 0.850)), 
-       url(../img/hero.jpg); 
-   background-size: cover; 
-   background-position: top; /* top of image will remain the same*/
-   position: relative; 
-   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%) /* Using a clip-path */
-   
-}
+  height: 95vh;
+  /* this should be 95 percent of the viewport height */
+  /* Using a linear gradient */
+  background-image: linear-gradient(to right top, rgba(126, 213, 111, 0.86), rgba(40, 180, 133, 0.85)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* top of image will remain the same*/
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
 
 /* Logo styles */
 .header__logo-box {
-   /* can use top bottom properties*/
-   position: absolute; /* Need a relative parent */
-   top: 4rem; 
-   left: 4rem; 
-}
+  /* can use top bottom properties*/
+  position: absolute;
+  /* Need a relative parent */
+  top: 4rem;
+  left: 4rem; }
 
 .header__logo {
-   height: 3.5rem;
-}
+  height: 3.5rem; }
 
 /* Header text styles */
 .header__text-box {
-   position: absolute;
-   top: 40%; /* relation to the parent element */
-   left: 50%;
-   /* shifts relative to the its own element 
+  position: absolute;
+  top: 40%;
+  /* relation to the parent element */
+  left: 50%;
+  /* shifts relative to the its own element 
    and ont parent element*/
-   transform: translate(-50%, -50%);
-   text-align: center;
-
-}
+  transform: translate(-50%, -50%);
+  text-align: center; }
 
 .heading-primary {
-   color: #fff;
-   text-transform: uppercase;
-   /* backface-visibility: hidden;  */
-   margin-bottom: 6rem;
-}
+  color: #fff;
+  text-transform: uppercase;
+  /* backface-visibility: hidden;  */
+  margin-bottom: 6rem; }
 
 .heading-primary--main {
-   display: block;
-   font-size: 6rem;
-   font-weight: 400;
-   letter-spacing: 3.5rem;
-   animation-name: moveInLeft;
-   animation-duration: 2s;
-   
-}
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 2s; }
 
 .heading-primary--sub {
-   display: block; /* behaves like a block element */
-   font-size: 2rem;
-   font-weight: 700;
-   letter-spacing: 1.75rem;
-   animation-name: moveInRight;
-   animation-duration: 2s;
-}
+  display: block;
+  /* behaves like a block element */
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-name: moveInRight;
+  animation-duration: 2s; }
 
 @keyframes moveInLeft {
-   0% {
-      opacity: 0;
-      transform: translateX(-10rem);
-   }
-   80% {
-      transform: translateX(2rem); 
-   }
-   100% {
-      opacity: 1;
-      transform: translateX(0);
-   }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInRight {
-   0% {
-      opacity: 0;
-      transform: translateX(10rem);
-   }
-
-   80% {
-      transform: translateX(-1rem);
-   }
-
-   100% {
-      opacity: 1;
-      transform: translateX(0);
-   }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInBottom {
-   0% {
-      opacity: 0;
-      transform: translateY(8rem);
-   }
-
-   100% {
-      opacity: 1;
-      transform: translateY(0);
-   }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(8rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 /* styles for all of our buttons */
 .btn:link,
 .btn:visited {
-   text-decoration: none;
-   text-transform: uppercase;
-   padding: 1.5rem 4rem;
-   border-radius: 10rem;
-   display: inline-block;
-   transition: all .3s;
-   position: relative;
-   font-size: 1.6rem; 
-}
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  transition: all .3s;
+  position: relative;
+  font-size: 1.6rem; }
 
 .btn:hover {
-   /* transform: translateY(-3px); */
-   background-color: rgb(39, 185, 19);
-   border: .1rem solid rgb(39, 185, 19);
-   color: #fff;
-   box-shadow: 0 .5rem 2rem rgba(0,0,0,0.2);
-   /* transform: scale(1.03); */
-}
+  /* transform: translateY(-3px); */
+  background-color: #27b913;
+  border: 0.1rem solid #27b913;
+  color: #fff;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  /* transform: scale(1.03); */ }
 
 /* .btn:active {
    transform: translateY(-1px);
 } */
-
 .btn--white {
-    border: .2rem solid rgb(255, 255, 255);
-    /* background-color: #fff; */
-    color: #fff;
-    animation: moveInBottom 1s ease-out 0s;
-    
-} 
+  border: 0.2rem solid white;
+  /* background-color: #fff; */
+  color: #fff;
+  animation: moveInBottom 1s ease-out 0s; }
 
 /* .btn::after {
    content: ""; 
@@ -184,19 +155,3 @@ body {
 .btn:hover::after {
    transform: scale(2);
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
