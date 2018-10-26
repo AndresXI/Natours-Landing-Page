@@ -1,3 +1,32 @@
+/* Animation styles */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(8rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 /* Universal selector */
 *,
 *::after,
@@ -11,7 +40,9 @@ html {
   font-size: 62.5%;
   /* 10 / 16 */ }
 
-/* default properties */
+body {
+  box-sizing: border-box; }
+
 body {
   /* all child elements of this body parent will inherit */
   font-family: "Lato", sans-serif;
@@ -19,39 +50,7 @@ body {
   /* font-size: 16px;  */
   line-height: 1.7;
   color: #777;
-  padding: 1rem;
-  /* does not gets inherited, applies only to the body el */
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /* this should be 95 percent of the viewport height */
-  /* Using a linear gradient */
-  background-image: linear-gradient(to right top, rgba(126, 213, 111, 0.86), rgba(40, 180, 133, 0.85)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /* top of image will remain the same*/
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* Using a clip-path */
-  /* Header text styles */ }
-  .header__logo-box {
-    /* can use top bottom properties*/
-    position: absolute;
-    /* Need a relative parent */
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    /* relation to the parent element */
-    left: 50%;
-    /* shifts relative to the its own element 
-         and ont parent element*/
-    transform: translate(-50%, -50%);
-    text-align: center; }
+  padding: 1rem; }
 
 .heading-primary {
   color: #fff;
@@ -99,31 +98,32 @@ body {
   color: #fff;
   animation: moveInBottom 1s ease-out 0s; }
 
-/* Animation styles */
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(2rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(8rem); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
+.header {
+  height: 95vh;
+  /* this should be 95 percent of the viewport height */
+  /* Using a linear gradient */
+  background-image: linear-gradient(to right top, rgba(126, 213, 111, 0.86), rgba(40, 180, 133, 0.85)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* top of image will remain the same*/
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Using a clip-path */
+  /* Header text styles */ }
+  .header__logo-box {
+    /* can use top bottom properties*/
+    position: absolute;
+    /* Need a relative parent */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /* relation to the parent element */
+    left: 50%;
+    /* shifts relative to the its own element 
+         and ont parent element*/
+    transform: translate(-50%, -50%);
+    text-align: center; }

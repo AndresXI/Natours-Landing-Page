@@ -1,0 +1,33 @@
+/* styles for all of our buttons */
+ .btn {
+    
+   &:link,
+   &:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1.5rem 4rem;
+      border-radius: 10rem;
+      display: inline-block;
+      transition: all .3s;
+      position: relative;
+      font-size: 1.6rem;
+   }
+
+   &:hover {
+      /* transform: translateY(-3px); */
+      background-color: $button-green;
+      border: .1rem solid $button-green;
+      color: $color-white;
+      box-shadow: 0 .5rem 2rem rgba($color-black, 0.2);
+      /* transform: scale(1.03); */
+   }
+
+   &--white {
+      border: .2rem solid $color-white;
+      /* background-color: ; */
+      color: $color-white;
+      animation: moveInBottom 1s ease-out 0s;
+
+   }
+
+}
