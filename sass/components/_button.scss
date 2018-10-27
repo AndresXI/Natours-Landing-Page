@@ -30,6 +30,14 @@
 
    }
 
+   &--green {
+      border: .2rem solid $color-primary;
+      /* background-color: ; */
+      color: $color-primary-dark;
+      animation: moveInBottom 1s ease-out 0s;
+
+   }
+
 }
 
 .btn-text {
