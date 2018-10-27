@@ -10,6 +10,7 @@
    background-position: top;
    /* top of image will remain the same*/
    position: relative;
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);/* Using a clip-path */
 
       &__logo-box {
