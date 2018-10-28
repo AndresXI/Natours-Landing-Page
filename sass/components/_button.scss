@@ -1,6 +1,10 @@
 /* styles for all of our buttons */
  .btn {
-    
+  // change for the <button> element 
+  border: none; 
+  cursor: pointer;
+   
+   &,  
    &:link,
    &:visited {
       text-decoration: none;
@@ -41,6 +45,7 @@
 }
 
 .btn-text {
+
   &:link, 
   &:visited {
     font-size: 1.6rem;
@@ -59,7 +64,9 @@
     transform: translateY(-2px); 
   }
 
+  &:focus,
   &:active {
+    outline: none; 
     box-shadow: 0 1rem 2rem rgba($color-black, .15);
     transform: translateY(0);
   }
