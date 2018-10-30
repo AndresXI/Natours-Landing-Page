@@ -34,8 +34,6 @@
 
       @include responsive(tab_port) {
          display: inline;
-         width: 50%;
-
       }
    }
 
@@ -47,6 +45,11 @@
        
       @include responsive(tab_port) {
          width: 100%;
+      }
+
+      @include responsive(phone) {
+         width: 100%;
+         padding: 1rem 4rem;
       }
    }
 
@@ -72,8 +75,14 @@
       hyphens: auto;
 
       @include responsive(tab_port) {
-         padding: 0 2rem;
-         margin-bottom: 2rem;
+         padding: 0 2.5rem;
+         margin-bottom: 2.5rem;
+      }
+
+      @include responsive(phone) {
+         padding: 0;
+         margin-bottom: 0;
+         column-gap: 2.5rem;
       }
    }
 
@@ -101,6 +110,11 @@
          text-decoration: none; 
          display: inline-block; 
          line-height: 1;
+
+         @include responsive(phone) {
+            top: 1rem;
+            right: 1rem;
+         }
       }
 
       &:hover {
