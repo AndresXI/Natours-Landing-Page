@@ -10,7 +10,23 @@
 /* ROOT font size is set in the html  */
 html {
    // this defines what 1rem is 
-   font-size: 62.5%;  /* 10 / 16 */
+   font-size: 62.5%;  /* 10 / 16    1 rem == 10px */  
+
+   @include responsive(tab_land) {
+      font-size: 56.25%; // 1rem == 9px, 9/16 == 56.25%
+   }
+
+   @include responsive(tab_port) {
+      font-size: 50%; // 1rem == 8px, 8/16 == 50%
+   }
+
+   @include responsive(phone) {
+      font-size: 45%; // 1rem == 8px, 8/16 == 50%
+   }
+
+   @include responsive(big_desktop) {
+      font-size: 75%; // 1rem == 12, 12/16 == 75%
+   }
 }
 
 body {
