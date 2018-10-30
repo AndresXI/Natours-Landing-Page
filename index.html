@@ -72,9 +72,23 @@
          </div>
          <div class="col-1-of-2">
            <div class="composition">
-             <img src="img/nat-1-large.jpg" alt="photo-1" class="composition__photo composition__photo--p1">
+              <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" alt="photo-1"
+                src="img/nat-1-large.jpg"
+                class="composition__photo composition__photo--p1"
+                sizes="(max-width: 900px) 20vw,(max-width: 600px) 30vw, 300px">
+
+              <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" alt="photo-2"
+                src="img/nat-2-large.jpg"
+                class="composition__photo composition__photo--p2"
+                sizes="(max-width: 900px) 20vw,(max-width: 600px) 30vw, 300px">
+                
+              <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" alt="photo-3"
+                src="img/nat-3-large.jpg"
+                class="composition__photo composition__photo--p3"
+                sizes="(max-width: 900px) 20vw,(max-width: 600px) 30vw, 300px">
+             <!-- <img src="img/nat-1-large.jpg" alt="photo-1" class="composition__photo composition__photo--p1">
              <img src="img/nat-2-large.jpg" alt="photo-2" class="composition__photo composition__photo--p2">
-             <img src="img/nat-3-large.jpg" alt="photo-3" class="composition__photo composition__photo--p3">
+             <img src="img/nat-3-large.jpg" alt="photo-3" class="composition__photo composition__photo--p3"> -->
            </div> 
          </div>
       </div>
@@ -337,7 +351,12 @@
 
    <footer class="footer">
      <div class="footer__logo-box">
-       <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+       <picture class="footer__logo">
+         <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" 
+            media="(max-width: 37.5em)">
+         <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo"
+              src="img/logo-green-2x.png">
+       </picture>
      </div>
      <div class="row">
        <div class="col-1-of-2">
@@ -354,11 +373,12 @@
 
        <div class="col-1-of-2">
          <p class="footer__copyright">
-          Copyright &copy; 2018 Developed by <a href="" class="footer__link">Andres Alcocer</a> and designed by Jonas Schmedtmann.
+          Copyright &copy; 2018 Developed by <a href="" class="footer__link">Andres Alcocer</a> 
+          and designed by Jonas Schmedtmann.
          </p>
        </div>
      </div>
-   </footer>
+   </footer> <!-- End footer section -->
 
    <div class="popup" id="popup"> <!-- Showing the popup box -->
     <div class="popup__content">
@@ -372,9 +392,10 @@
           <h2 class="heading-secondary u-margin-bottom-small u-center-text">Start booking now</h2>
           <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
           <p class="u-margin-bottom-medium">
-            Lorem ipsum dolor sit amet, mporibus ab nulla velit maiores maxime vitae, nihil eligendi ut saepe blanditiis 
-            ratione saepe eliesse quisquam fuga possimus! Est ratione id doloremque eligendi soluta?
-            Lorem ipsum dolodit, laudantium dolorum possimus amet. Ipsam provident, magnam alias neque in dolorum velit, labore architecto saepe voluptate ratione nisi fugit!
+            Lorem ipsum dolor sit amet, mporibus ab nulla velit maiores maxime vitae, nihil eligendi ut 
+            saepe blanditiis ratione saepe eliesse quisquam fuga possimus! Est ratione id doloremque eligendi soluta?
+            Lorem ipsum dolodit, laudantium dolorum possimus amet. Ipsam provident, magnam alias n
+            eque in dolorum velit, labore architecto saepe voluptate ratione nisi fugit!
           </p>
           <a href="" class="btn btn-green">Book now</a>
         </div>
