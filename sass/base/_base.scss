@@ -31,5 +31,10 @@ html {
 
 body {
    box-sizing: border-box;
+   padding: 1rem;
+
+   @include responsive(tab_port) {
+     padding: 0;
+   }
 }
 
