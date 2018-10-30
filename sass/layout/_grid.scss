@@ -4,6 +4,7 @@
    margin: 0 auto;
    @include responsive(tab_port) {
       max-width: 50rem;
+      padding: 0 3rem;
    }
 
    // .row:not() --> does opposite of .row:last-child()
